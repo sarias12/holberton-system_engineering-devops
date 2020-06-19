@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script is displaying "Holberton School" 10 times (While loop)
+count=1
+while [ $count -le 10 ]; do
+    echo "Holberton School"
+    let "count+=1"
+done;

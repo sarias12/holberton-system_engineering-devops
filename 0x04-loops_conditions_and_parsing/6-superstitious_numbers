@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# This script is displaying numbers from 1 to 20 and text according with the iteration.
+count=1
+while [ $count -le 20 ]; do
+    echo "$count"
+    case $count in
+        4) echo "$count" | echo "bad luck from China"
+        ;;
+        9) echo "bad luck from Japan"
+        ;;
+        17) echo "bad luck from Italy"
+        ;;
+    esac
+    let "count+=1"
+done;
