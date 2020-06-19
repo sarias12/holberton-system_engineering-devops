@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# This script is displaying
-list="$(ls -1)"
-for element in "$list"; do
-    echo $element | cut -d'-' -f2
+# This script is displaying the content of the current directory, in a lis
+LIST=$(ls)
+for element in $LIST; do
+    echo "$element" | cut -d'-' -f2
 done
