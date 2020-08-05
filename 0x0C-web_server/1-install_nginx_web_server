@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script configure a new Ubuntu machine.
+sudo apt update
+sudo apt install -y nginx
+sudo ufw allow 'Nginx HTTP'
+rtfile=$(grep -m 1 "root" /etc/nginx/sites-enabled/default | cut -d " " -f2 | cut -d ";" -f1)
+echo "Holberton School" | sudo tee "$rtfile"'/index.html'
+service nginx start
