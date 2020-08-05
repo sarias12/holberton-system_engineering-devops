@@ -3,6 +3,5 @@
 sudo apt update
 sudo apt install -y nginx
 sudo ufw allow 'Nginx HTTP'
-rtfile=$(grep -m 1 "root" /etc/nginx/sites-enabled/default | cut -d " " -f2 | cut -d ";" -f1)
-echo "Holberton School" | sudo tee "$rtfile"'/index.nginx-debian.html'
+echo "Holberton School" | sudo tee '/var/www/html/index.nginx-debian.html'
 service nginx start
