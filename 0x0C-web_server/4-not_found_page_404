@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script configure a new Ubuntu machine.
+sudo apt-get update
+sudo apt-get install -y nginx
+sudo ufw allow 'Nginx HTTP'
+echo 'Holberton School' | sudo tee '/var/www/html/index.html'
+echo 'Ceci nest pas une page' | sudo tee '/var/www/html/404.html'
+new_string="server_name _;\n\t\trewrite /redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\nerror_page 404 /404.html;"
+sudo sed -i 's|server_name _;|'"$new_string"'|' /etc/nginx/sites-enabled/default
+service nginx restart
