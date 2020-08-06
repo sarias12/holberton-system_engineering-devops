@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This script resolve bug an a container.
+sudo service apache2 start
