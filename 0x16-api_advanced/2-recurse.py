@@ -14,7 +14,7 @@ def recurse(subreddit, hot_list=[], after=''):
     url = url + subreddit + '/hot.json?limit=100&after=' + after
     response = requests.get(url, headers=headers)
     if response.status_code != 200:
-        print('None')
+        return None
     else:
         data = response.json()
         list_dicts = data.get('data').get('children')
